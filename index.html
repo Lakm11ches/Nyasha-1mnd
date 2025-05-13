@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сюрприз</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="screamer">
+    <img src="foto/scream.gif" alt="BOO!">
+    <audio id="scream-sound" src="phantom-jaiden-screamer_MRgTMUz.mp3"></audio>
+  </div>
+  <audio id="background-music" autoplay loop>
+  <source src="sound/Miside — Menu (www.hotplayer.ru).mp3" type="audio/mp3">
+  Ваш браузер не поддерживает элемент <code>audio</code>.
+  </audio>
+
+
+  <div id="main-content">
+    <div id="greeting"></div>
+    <div id="question">
+      <p class="rainbow-text">Страшно?</p>
+      <div class="question-button">
+      
+        <button onclick="startCute()">Да</button>
+        <button onclick="startCute()">Нет</button>
+      </div>
+    </div>
+    
+    <div id="heart-container">
+      <img src="foto/heart.gif" alt="Heart" class="heart">
+      <img src="foto/heart.gif" alt="Heart" class="heart">
+      <img src="foto/heart.gif" class="heart">
+      <img src="foto/heart.gif" alt="Heart" class="heart">
+      <img src="foto/heart.gif" alt="Heart" class="heart">
+    </div>
+    
+    <div id="cute-messages" ></div>
+
+    <div id="answer-buttons" style="display: none; text-align: center; margin-top: 20px;">
+      <button class="answer-btn">новый год</button>
+      <button class="answer-btn">твой день рождения</button>
+      <button class="answer-btn">первый день осени</button>
+      <button class="answer-btn">мы встречаемса месяц</button>
+    </div>
+
+      <!-- Экран с поздравлением -->
+    <div id="final-screen" style="display: none;">
+      <div class="kitty-wrapper" style="left: -50px; bottom: 30%;">
+        <img src="foto/котик2-removebg-preview.png" class="kitty" onclick="showKittyMessage(this)">
+        <div class="kitty-message">я люблю тебя</div>
+      </div>
+
+      <div id="final-message"> 
+        <p>месяц это уже нихуя себе.</p>
+        <p></p>
+      </div>
+      <div id="final-animation">
+        <!-- Можешь добавить анимацию или картинку -->
+        <img src="foto/hello_kitty.gif" alt="Heart animation">
+      </div>
+    </div>
+
+  </div>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
