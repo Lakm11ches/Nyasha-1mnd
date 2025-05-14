@@ -1,3 +1,4 @@
+ alert("ты здорова?")
  window.onload = function () {
     // Играем звук сразу при загрузке страницы
     const screamSound = document.getElementById('scream-sound');
@@ -14,19 +15,6 @@
       }, 2000); // После скримера скрываем его
     }, 2000);
   };
-
-const greeting = document.getElementById("greeting");
-const texts = ["Ты прелесть:o", "Ты чудо:)", "Ты котёнок:3", "Ты моё счастье:O", "Я люблю тебя<3"];
-let index = 0;
-
-setInterval(() => {
-  greeting.classList.add("glitch"); // добавляем глитч
-  setTimeout(() => {
-    greeting.textContent = texts[index];
-    index = (index + 1) % texts.length;
-    greeting.classList.remove("glitch"); // убираем глитч
-  }, 200); // смена текста немного после старта глитча
-}, 1500); // каждые 1.5 секунды
 
 // Получаем элемент с музыкой
 const music = document.getElementById('background-music');
@@ -66,6 +54,20 @@ emojis.forEach(emoji => {
   emoji.style.animationDelay = Math.random() * 5 + 's';
   emoji.style.fontSize = (16 + Math.random() * 24) + 'px';
 });
+
+const greeting = document.getElementById("greeting");
+const texts = ["Ты прелесть:o", "Ты чудо:)", "Ты котёнок:3", "Ты моё счастье:O", "Я люблю тебя<3"];
+let index = 0;
+
+setInterval(() => {
+  greeting.classList.add("glitch"); // добавляем глитч
+  setTimeout(() => {
+    greeting.textContent = texts[index];
+    index = (index + 1) % texts.length;
+    greeting.classList.remove("glitch"); // убираем глитч
+  }, 200); // смена текста немного после старта глитча
+}, 1500); // каждые 1.5 секунды
+
 
 function showKittyMessage(kittyImg) {
   const message = kittyImg.nextElementSibling;
