@@ -1,18 +1,19 @@
-window.onload = function () {
-  setTimeout(() => {
+ window.onload = function () {
+    // Играем звук сразу при загрузке страницы
     const screamSound = document.getElementById('scream-sound');
     screamSound.volume = 0.5;
-    screamSound.play()
+    screamSound.play();
+
+    // Скример появляется
     setTimeout(() => {
       document.getElementById("screamer").style.opacity = "0";
       setTimeout(() => {
         document.getElementById("screamer").style.display = "none";
         document.getElementById("main-content").style.display = "block";
         document.body.style.backgroundColor = "#ffe6f0";
-      }, 2000);
+      }, 2000); // После скримера скрываем его
     }, 2000);
-  }, 1);
-};
+  };
 
 const greeting = document.getElementById("greeting");
 const texts = ["Ты прелесть:o", "Ты чудо:)", "Ты котёнок:3", "Ты моё счастье:O", "Я люблю тебя<3"];
