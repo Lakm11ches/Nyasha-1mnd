@@ -1,20 +1,24 @@
- alert("ты здорова?")
- window.onload = function () {
-    // Играем звук сразу при загрузке страницы
-    const screamSound = document.getElementById('scream-sound');
+window.onload = function () {
+  // Показываем скример через 1 секунду
+  setTimeout(() => {
+    const screamer = document.getElementById("screamer");
+    const screamSound = document.getElementById("scream-sound");
+    const preload = document.getElementById("preloader");
+
+    screamer.style.display = "block";
+    preload.style.display = "none";
     screamSound.volume = 0.5;
     screamSound.play();
 
-    // Скример появляется
+    // Через 2 секунды убираем скример и показываем контент
     setTimeout(() => {
-      document.getElementById("screamer").style.opacity = "0";
-      setTimeout(() => {
-        document.getElementById("screamer").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        document.body.style.backgroundColor = "#ffe6f0";
-      }, 2000); // После скримера скрываем его
+      screamer.style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      document.body.style.backgroundColor = "#ffe6f0";
     }, 2000);
-  };
+  }, 4000); // задержка перед скримером (например, чтобы дать эффект неожиданности)
+};
+
 
 // Получаем элемент с музыкой
 const music = document.getElementById('background-music');
@@ -45,7 +49,7 @@ function fadeInAudio() {
 // Задержка в 2 секунды перед началом воспроизведения
 setTimeout(() => {
   fadeInAudio(); // Начать плавное увеличение громкости
-}, 2000);
+}, 7000);
 
 const emojis = document.querySelectorAll('.float-emoji');
 emojis.forEach(emoji => {
