@@ -1,24 +1,33 @@
 window.onload = function () {
-  // Показываем скример через 1 секунду
-  setTimeout(() => {
-    const screamer = document.getElementById("screamer");
-    const screamSound = document.getElementById("scream-sound");
-    const preload = document.getElementById("preloader");
+  const screamer = document.getElementById("screamer");
+  const screamSound = document.getElementById("scream-sound");
+  const preload = document.getElementById("preloader");
+  const main = document.getElementById("main-content");
 
-    screamer.style.display = "block";
+  // 1. Ждём 4 секунды — прелоадер
+  setTimeout(() => {
     preload.style.display = "none";
+    screamer.style.display = "block";
     screamSound.volume = 0.5;
     screamSound.play();
 
-    // Через 2 секунды убираем скример и показываем контент
+    // 2. Через 2 секунды скрываем скример
     setTimeout(() => {
       screamer.style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-      document.body.style.backgroundColor = "#ffe6f0";
+
+      // 3. Ждём ещё 2 секунды (пустота), и потом показываем main
+      setTimeout(() => {
+        main.style.display = "block";
+        document.body.style.backgroundColor = "#ffe6f0";
+      }, 3000);
     }, 2000);
-  }, 4000); // задержка перед скримером (например, чтобы дать эффект неожиданности)
+  }, 4000);
 };
 
+document.getElementById("promo-button").addEventListener("click", function() {
+  // Показываем фейковый промокод
+  document.getElementById("fake-code").style.display = "block";
+});
 
 // Получаем элемент с музыкой
 const music = document.getElementById('background-music');
@@ -29,7 +38,7 @@ music.volume = 0;
 // Функция для плавного увеличения громкости
 function fadeInAudio() {
   let volume = 0; // Начальная громкость
-  const targetVolume = 0.25; // Конечная громкость
+  const targetVolume = 0.30; // Конечная громкость
   const duration = 5000; // Длительность анимации в миллисекундах (например, 5 секунд)
   const step = targetVolume / (duration / 16); // Шаг увеличения громкости
 
@@ -49,7 +58,7 @@ function fadeInAudio() {
 // Задержка в 2 секунды перед началом воспроизведения
 setTimeout(() => {
   fadeInAudio(); // Начать плавное увеличение громкости
-}, 7000);
+}, 6500);
 
 const emojis = document.querySelectorAll('.float-emoji');
 emojis.forEach(emoji => {
