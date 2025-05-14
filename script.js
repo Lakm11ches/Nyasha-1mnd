@@ -1,7 +1,7 @@
 window.onload = function () {
   setTimeout(() => {
     const screamSound = document.getElementById('scream-sound');
-    screamSound.volume = 0.0;
+    screamSound.volume = 0.5;
     screamSound.play()
     setTimeout(() => {
       document.getElementById("screamer").style.opacity = "0";
@@ -36,7 +36,7 @@ music.volume = 0;
 // Функция для плавного увеличения громкости
 function fadeInAudio() {
   let volume = 0; // Начальная громкость
-  const targetVolume = 0.0; // Конечная громкость
+  const targetVolume = 0.25; // Конечная громкость
   const duration = 5000; // Длительность анимации в миллисекундах (например, 5 секунд)
   const step = targetVolume / (duration / 16); // Шаг увеличения громкости
 
