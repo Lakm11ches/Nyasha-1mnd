@@ -1,7 +1,7 @@
 window.onload = function () {
   setTimeout(() => {
     const screamSound = document.getElementById('scream-sound');
-    screamSound.volume = 0.2;
+    screamSound.volume = 0.0;
     screamSound.play()
     setTimeout(() => {
       document.getElementById("screamer").style.opacity = "0";
@@ -36,7 +36,7 @@ music.volume = 0;
 // Функция для плавного увеличения громкости
 function fadeInAudio() {
   let volume = 0; // Начальная громкость
-  const targetVolume = 0.3; // Конечная громкость
+  const targetVolume = 0.0; // Конечная громкость
   const duration = 5000; // Длительность анимации в миллисекундах (например, 5 секунд)
   const step = targetVolume / (duration / 16); // Шаг увеличения громкости
 
@@ -58,6 +58,13 @@ setTimeout(() => {
   fadeInAudio(); // Начать плавное увеличение громкости
 }, 2000);
 
+const emojis = document.querySelectorAll('.float-emoji');
+emojis.forEach(emoji => {
+  emoji.style.left = Math.random() * 100 + 'vw';
+  emoji.style.animationDuration = (8 + Math.random() * 5) + 's';
+  emoji.style.animationDelay = Math.random() * 5 + 's';
+  emoji.style.fontSize = (16 + Math.random() * 24) + 'px';
+});
 
 function showKittyMessage(kittyImg) {
   const message = kittyImg.nextElementSibling;
@@ -146,3 +153,26 @@ function showFinalScreen() {
   restartButton.addEventListener("click", restartGame);
 }
 
+document.addEventListener('click', function(e) {
+const emojis = ['💖','🌈','😺','✨','🦄','👽','🍓','⭐','🎀'];
+const emoji = document.createElement('span');
+emoji.classList.add('tap-effect');
+emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+emoji.style.left = e.clientX + 'px';
+emoji.style.top = e.clientY + 'px';
+document.body.appendChild(emoji);
+
+setTimeout(() => {
+  emoji.remove();
+}, 1000); // удаляем через 1 секунду
+});
+
+function showKittyMessage(el) {
+  const msg = el.nextElementSibling;
+  msg.style.display = 'block';
+  msg.classList.add('show');
+
+  const meow = new Audio('data:audio/mp3;base64,SUQzBAAAAAAAI1RPU0QAAABtbnNA...'); // вставь сюда свою Base64 строку
+
+  meow.play();
+}
