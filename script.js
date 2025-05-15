@@ -250,6 +250,6 @@ function getRandomPosition() {
 }
 
 function waitForNextGlitch() {
-  const delay = Math.random() * 4000 + 2000; // 3–8 сек
+  const delay = Math.random() * 3600 + 1700; // 3–8 сек
   setTimeout(triggerGlitchEffect, delay);
 }

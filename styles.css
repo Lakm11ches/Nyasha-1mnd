@@ -464,6 +464,7 @@ button:hover {
   text-shadow: 0 0 10px #ffb3d9, 0 0 20px #ffaadd;
   animation: fadeIn 1s ease forwards;;
   opacity: 0;
+  z-index: 150;
 }
 
 /* Плавное появление с увеличением */
@@ -518,7 +519,7 @@ button:hover {
 
 .sorryplz{
   font-weight: bold;
-  font-size: 17px;
+  font-size: 30px;
   color: #FFF;
   position: absolute;
   transform: rotate(-30deg);
@@ -663,7 +664,7 @@ button:hover {
   width: 150px;
   pointer-events: none;
   display: none;
-  z-index: 8;
+  z-index: -1;
   opacity: 0.8;
 }
 
